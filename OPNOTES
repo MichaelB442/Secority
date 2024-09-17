@@ -1,3 +1,14 @@
 DAY1
 Getting on to jump station
+  ssh -MS /tmp/jump student@10.50.24.61
+scanning networks
+  for i in {97..126}; do (ping -c 1 192.168.28.$i | grep "bytes from" &) ; done
+    64 bytes from 192.168.28.111: icmp_seq=1 ttl=63 time=1.14 ms
+    64 bytes from 192.168.28.105: icmp_seq=1 ttl=63 time=0.634 ms
+    64 bytes from 192.168.28.100: icmp_seq=1 ttl=63 time=0.592 ms
+    64 bytes from 192.168.28.98: icmp_seq=1 ttl=63 time=1.15 ms
+    64 bytes from 192.168.28.99: icmp_seq=1 ttl=63 time=3.18 ms
+    64 bytes from 192.168.28.97: icmp_seq=1 ttl=64 time=0.062 ms
+    64 bytes from 192.168.28.120: icmp_seq=1 ttl=63 time=0.399 ms
 
+  

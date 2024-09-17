@@ -13,10 +13,31 @@ Linux Opstation
 WinOps
 192.168.65.10,  use 10.50.32.44
 
-
+192.168.28.97,98,100,105
 ----New tunneling strat
 --connection to jump box
 ssh -MS /tmp/jump student@10.50.24.61
+--only command ran on jump box is a ping sweep:
+for i in {1..254}; do (ping -c 1 172.16.82.$i | grep "bytes from" &) ; done
+-- home machine, seperate terminator window
+ssh -S /tmp/jump jump -O forward -D9050
+proxychains stuff
+
+ctrl + R 9050 or something that defines the tunnel
+change "forward" to "cancel" to close a tunnel
+
+--port forwarding
+ssh -S /tmp/jump jump -O forward -L2222:192.168.28.100:80 -L3333:192.168.28.100:2222
+type firefox and connect using local host(127.0.0.1:2222)
+
+(3333 is ssh)
+ssh -MS /tmp/t1 creds@127.0.0.1 -p 3333 
+the /tmp/#### files are opening sockets
+
+
+ssh -S /tmp/T1 T1 -O forward -L6666:192.168.50.10:22 -L7777:192.168.50.20:22
+ssh -MS /tmp/T2 creds@127.0.0.1 -p 7777
+
 
 
 

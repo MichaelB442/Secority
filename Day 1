@@ -1,4 +1,6 @@
 10.50.36.14/classinfo.html
+
+http://10.50.20.30:8000
 stack   Uname        Pword              Jump
 2 	    MIBA-006-M 	 nwNSxRwzJaM1PnY 	  10.50.24.61
 
@@ -10,3 +12,16 @@ Linux Opstation
 
 WinOps
 192.168.65.10,  use 10.50.32.44
+
+
+----New tunneling strat
+--connection to jump box
+ssh -MS /tmp/jump student@10.50.24.61
+
+
+
+
+
+
+
+

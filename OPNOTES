@@ -10,5 +10,7 @@ scanning networks
     64 bytes from 192.168.28.99: icmp_seq=1 ttl=63 time=3.18 ms
     64 bytes from 192.168.28.97: icmp_seq=1 ttl=64 time=0.062 ms
     64 bytes from 192.168.28.120: icmp_seq=1 ttl=63 time=0.399 ms
+set up dynamic 
+  ssh -S /tmp/jump jump -O forward -D9050
 
   

@@ -39,6 +39,44 @@ ssh -S /tmp/T1 T1 -O forward -L6666:192.168.50.10:22 -L7777:192.168.50.20:22
 ssh -MS /tmp/T2 creds@127.0.0.1 -p 7777
 
 
+Penetration Testing
+Phase 1: Mission Definition
+Phase 2: Recon
+Phase 3: Footprinting
+Phase 4: Exploitation & Initial Access
+Phase 5: Post-Exploitation
+Phase 6: Document Mission
+
+**Scanning and Reconnaissance**
+HTML
+  Client-side interpretation (web browser)
+  Utilizes elements (identified by tags)
+  Typically redirects to another page for server-side interaction
+  Cascading Stylesheets (CSS) for page themeing
+
+Scraping data script
+    #!/usr/bin/python
+    import lxml.html
+    import requests
+    
+    page = requests.get('http://quotes.toscrape.com')
+    tree = lxml.html.fromstring(page.content)
+    
+    authors = tree.xpath('//small[@class="author"]/text()')
+    
+    print ('Authors: ',authors)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

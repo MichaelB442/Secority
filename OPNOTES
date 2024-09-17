@@ -12,5 +12,18 @@ scanning networks
     64 bytes from 192.168.28.120: icmp_seq=1 ttl=63 time=0.399 ms
 set up dynamic 
   ssh -S /tmp/jump jump -O forward -D9050
+NMAP recon
+proxychains nmap -T4 192.168.28.XXX -p21-23,80
+.97
+.98
+.99
+.100 --80
+.105 --21,23
+Banner grab ftp server
+proxychains wget -r ftp://192.168.28.105
+    ServerInitialization  sAfGYqihEp6EOqEOMyAP  welcome.msg
 
-  
+.111 --80
+.120
+proxychains nmap -T5 -Pn -n 192.168.150.225,226,227,245,253 --script=smb-os-discovery
+

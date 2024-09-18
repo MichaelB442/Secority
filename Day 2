@@ -1,0 +1,58 @@
+HTTP
+https://tools.ietf.org/html/rfc2616
+communication ir request/respond
+***GET***
+***POST***
+HEAD
+PUT
+Response codes
+  10X == Informational
+  2XX == Success
+  30X == Redirection
+  4XX == Client Error
+  5XX == Server Error
+Header HTTP fields to focus
+  User-Agent -- chrome mozilla etc / could have OS
+  Referer
+  Cookie -- stuff the server downloads for session
+  Date
+  Server -- software of server
+  Set-Cookie -- server tells client what the cookie is for
+Various tools to view:
+  tcpdump
+  wireshark
+  Developer Console
+
+wget -- use with ftp
+  Recursively download
+  Recover from broken transfers
+  SSL/TLS support
+  wget -r -l2 -P /tmp ftp://ftpserver/
+  wget --save-cookies cookies.txt --keep-session-cookies --post-data 'user=1&password=2' https://website
+  wget --load-cookies cookies.txt -p https://website/interesting/article.php
+
+Javascript
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

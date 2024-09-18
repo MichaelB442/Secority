@@ -27,3 +27,65 @@ proxychains wget -r ftp://192.168.28.105
 .120
 proxychains nmap -T5 -Pn -n 192.168.150.225,226,227,245,253 --script=smb-os-discovery
 
+
+
+
+
+
+Day 2
+DEMO
+go to robots.txt
+      view-source:http://10.50.28.11/robots.txt
+      User-agent: *
+      Allow: /uploads
+      Allow: /chat
+      Allow: /cmdinjection
+      Allow: /java
+      Allow: /path
+      Allow: /webexample
+      Disallow: /cross
+      Disallow: /
+      User-agent: Googlebot
+      Disallow: /
+      User-agent: Baiduspider
+      Disallow: /
+
+go to just IP
+      10.50.28.11
+      can upload file/ recover_DB
+      inspect with right click head>style>double click to indent and read easier
+tools/scripts
+      nmap --script=http-enum 10.50.28.11
+      PORT     STATE  SERVICE
+      22/tcp   open   ssh
+      80/tcp   open   http
+      | http-enum: 
+      |   /robots.txt: Robots file
+      |   /java/: Potentially interesting directory w/ listing on 'apache/2.4.29 (ubuntu)'
+      |   /path/: Potentially interesting directory w/ listing on 'apache/2.4.29 (ubuntu)'
+      |_  /uploads/: Potentially interesting directory w/ listing on 'apache/2.4.29 (ubuntu)'
+      3389/tcp closed ms-wbt-server
+      8080/tcp closed http-proxy
+      9999/tcp closed abyss
+sudo tcpdump -XXvvnni any tcp port 80
+nikto v -n 10.50.28.11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

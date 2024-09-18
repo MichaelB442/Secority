@@ -32,7 +32,75 @@ wget -- use with ftp
   wget --load-cookies cookies.txt -p https://website/interesting/article.php
 
 Javascript
+  Allows websites to interact with the client
+    JavaScript runs on the client’s machine
+  Coded as .js files, or in-line of HTML
+Example:
+<script>
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+</script>
 
+Website Enumeration
+  Robots.txt -- check it, has stuff for scrapers and directories (search root of website http://<IP>/) 
+  Legitimate surfing
+  Tools:
+    NSE scripts
+    Nikto
+    Burp suite (outside class)
+Reflected XSS
+so basically, send them a link that isnt real, they click it and it executes a script
+  Most common form of XSS
+  Transient, occurs in error messages or search results
+  Delivered through intermediate media, such as a link in an email
+  Characters that are normally illegal in URLs can be Base64 encoded
+Below is what you see, but the server will decode as name=abc123
+http://example.com/page.php?name=dXNlcjEyMw
+
+stored XSS
+go to website and script runs
+  Resides on vulnerable site
+  Only requires user to visit page
+  <img src="http://invalid" onerror="window.open('http://10.50.XX.XX:8000/ram.png','xss','height=1,width=1');">
+
+Useful JavaScript Components
+Proof of concept (simple alert):   <script>alert('XSS');</script>   
+  Capturing Cookies -- steal other users cookie
+  document.cookie
+  Capturing Keystrokes
+    bind keydown and keyup
+  Capturing Sensitive Data
+  document.body.innerHTML
+
+Server-Side injection
+Making the server do our dirty work
+Directory Traversal/Path Traversal
+  Ability to read/execute outside web server’s directory
+  Uses ../../ (relative paths) in manipulating a server-side file path
+view_image.php?file=../../etc/passwd
+if its running cat in the background we can give it a relative path -- remember you dont know how deep the filesystem is use (..) to go back directories (like cd ..)
+
+
+Malicious File Upload
+IF Site allows unsanitized file uploads
+  Server doesn’t validate extension or size
+  Allows for code execution (shell)
+  Once uploaded
+    Find your file
+    call your file
+you have to find your file -- server needs to not be validating/sanitizing
+
+Command Injection
+Application on the server is vulnerable,
+allowing execution of arbitrary commands
+  User input not validated
+    Common example is a SOHO router, with a web page to allow ping
+Might contain the following in it’s code:
+system("ping -c 1 ".$_GET["ip"]);
+
+Run the following to chain/stack our arbitrary command(;)
+; cat /etc/passwd
 
 
 

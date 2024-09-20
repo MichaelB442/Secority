@@ -1,0 +1,91 @@
+
+
+X86_64 Assembly - Common Terms
+  Heap --Memory that can be allocated and deallocated
+**Stack --A contiguous section of memory used for passing arguments
+  General Register --A multipurpose register that can be used by either programmer or user to store data or a memory location address
+  Control Register --A processor register that changes or controls the behavior of a CPU
+  Flags Register --Contains the current state of the processor
+
+X86_64 Assembly
+  There are 16 general purpose 64-Bit registers
+%rax --The first return register
+%rbp --The base pointer that keeps track of the base of the stack
+%rsp --The stack pointer that points to the top of the stack
+
+X86_64 Assembly - Memory Offset
+There is one instruction pointer register that points to the memory offset of the next instruction in the code segment
+64-Bit||||Lower 32 bits||||Lower 16 bits||||Descrition
+RIP   ||||     EIP     ||||      IP     ||||Instruction Pointer; holds address for next instruction to be executed
+
+X86_64 Assembly - Common Instructions
+MOV ||Move source to destination
+PUSH||Push source onto stack
+POP ||Pop top of stack to destination
+INC ||Increment source by 1
+DEC ||Decrement source by 1
+ADD ||Add source to destination
+SUB ||Subtract source from destination
+CMP ||Compare 2 values by subtracting them and setting the %RFLAGS register. ZeroFlag set means they are the same.
+JMP ||Jump to specified location
+JLE ||Jump if less than or equal
+JE  ||Jump if equal
+RET ||If theres nothing specified it returns the content of the first return registry(rax)
+Stack 
+--First in=Last out 
+
+Reverse Engineering Workflow (Software)
+  Static       ||| Find plain text ascii and unicode strings
+  Behavioral   ||| Take a snapshot of critical configurations of the analysis environment
+  Dynamic      ||| Execute binary in a debugger
+  Disassembly  ||| Disassemble binary in IDA, Ghidra, or other disassembler
+  Document Findings
+
+
+Portable Executable Patching / Software Analysis
+  Perform Debugging and Disassembly
+  Find the Success/Failure
+  Adjust Instructions
+  Apply Patch and Save
+  Execute Patched Binary
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,3 +1,5 @@
+1200M || 1200TH || 0900F Savannah River Brewery
+
 DAY1
 Getting on to jump station
   ssh -MS /tmp/jump student@10.50.24.61

@@ -13,7 +13,7 @@ Linux Opstation
 192.168.65.20,  use 10.50.22.124
 
 WinOps
-192.168.65.10,  use 10.50.32.44
+192.168.65.10,  use 10.50.32.44    xfreerdp /v:10.50.32.44 /u:student /p:password /size:1920x1000 +clipboard
 
 192.168.28.97,98,100,105
 ----New tunneling strat

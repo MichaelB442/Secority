@@ -1,6 +1,20 @@
 1200M || 1200TH || 0900F Savannah River Brewery
 
-SCP from another device
+SCP
+scp <source> <destination>
+
+##Local > Remote
+scp /path/to/file student@X.X.X.X:/path/to/destination
+##Remote > Local
+scp student@X.X.X.X:/path/to/file .
+##Remote > Local (Tunnel)
+ssh -MS
+ssh -S
+scp -P 1111 creds@127.0.0.1:/path/to/file /path/to/destination
+##Local > Remote(Tunnel)
+scp -P 1111 /path/to/source/file creds@127.0.0.1:/path/to/destination
+
+
 scp student@10.50.32.44:C:/Users/student/func .
 
 

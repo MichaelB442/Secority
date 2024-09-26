@@ -1,0 +1,25 @@
+get into system and take private key
+chmod 600 /home/student/stolenkey
+ssh -i /home/student/stolenkey jane@1.2.3.4
+WINDOWS
+net user
+tasklist /v
+tasklist /svc
+ipconfig /all
+
+LINUX
+sudo -l
+cat /etc/passwd
+ps -elf
+chkconfig
+systemctl --type=service
+ip a
+
+
+
+
+
+
+
+
+  
